@@ -43,6 +43,9 @@
 (global-hide-mode-line-mode)
 
 (after! org
+  (setq org-directory "~/Documents/Org"))
+
+(after! org
   (setq
    org-hidden-keywords '(author date email subtitle title)))
 
@@ -83,4 +86,7 @@
   (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
   (add-hook 'org-mode-hook 'variable-pitch-mode))
 
-(setq fancy-splash-image (concat doom-user-dir "assets/hanekokoro-logo.svg"))
+(after! org-roam
+  (setq org-roam-directory (file-name-concat org-directory "Roam")))
+
+(setq fancy-splash-image (file-name-concat doom-user-dir "assets/hanekokoro-logo.svg"))

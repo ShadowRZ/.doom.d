@@ -393,6 +393,13 @@ Then configure and enable it:
 
 ** Org Configuration
 
+*** Org Directory
+
+#+begin_src emacs-lisp :tangle config.el
+(after! org
+  (setq org-directory "~/Documents/Org"))
+#+end_src
+
 *** Hidden Keywords
 
 #+begin_src emacs-lisp :tangle config.el
@@ -448,8 +455,17 @@ Code copied from [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prett
   (add-hook 'org-mode-hook 'variable-pitch-mode))
 #+end_src
 
-*** Fancy Splash Image
+*** Org Roam
+
+Set the Org Roam directory to =Roam= beneath [[var:org-directory][org-directory]]:
 
 #+begin_src emacs-lisp :tangle config.el
-(setq fancy-splash-image (concat doom-user-dir "assets/hanekokoro-logo.svg"))
+(after! org-roam
+  (setq org-roam-directory (file-name-concat org-directory "Roam")))
+#+end_src
+
+** Fancy Splash Image
+
+#+begin_src emacs-lisp :tangle config.el
+(setq fancy-splash-image (file-name-concat doom-user-dir "assets/hanekokoro-logo.svg"))
 #+end_src
