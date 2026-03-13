@@ -1,6 +1,6 @@
 #+title:Hanekokoro Emacs (Doom Emacs Variant)
 
-[[./assets/hanekokoro-logo.svg]]
+[[file:./assets/hanekokoro-logo.svg]]
 
 This is [[https://github.com/ShadowRZ][@ShadowRZ]]'s [[https://github.com/doomemacs/doomemacs][Doom Emacs]] configuration, along with a summary of what each part of source code means.
 
