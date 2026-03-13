@@ -396,8 +396,7 @@ Then configure and enable it:
 *** Org Directory
 
 #+begin_src emacs-lisp :tangle config.el
-(after! org
-  (setq org-directory "~/Documents/Org"))
+(setq org-directory "~/Documents/Org")
 #+end_src
 
 *** Hidden Keywords
@@ -460,8 +459,7 @@ Code copied from [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prett
 Set the Org Roam directory to ~Roam~ beneath [[var:org-directory][org-directory]]:
 
 #+begin_src emacs-lisp :tangle config.el
-(after! org-roam
-  (setq org-roam-directory (file-name-concat org-directory "Roam")))
+(setq org-roam-directory (file-name-concat org-directory "Roam"))
 #+end_src
 
 ** Fancy Splash Image
