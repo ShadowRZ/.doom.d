@@ -8,13 +8,13 @@ This is [[https://github.com/ShadowRZ][@ShadowRZ]]'s [[https://github.com/doomem
 
 Doom Emacs uses three configuration files:
 
-- =init.el=: defines included modules
-- =packages.el=: defines additional packages
-- =config.el=: defines local configurations
+- ~init.el~: defines included modules
+- ~packages.el~: defines additional packages
+- ~config.el~: defines local configurations
 
 We start by scaffolding the basic structure for these files:
 
-** =init.el=
+** ~init.el~
 
 #+begin_src emacs-lisp :tangle init.el
 ;;; init.el -*- lexical-binding: t; -*-
@@ -35,7 +35,7 @@ We start by scaffolding the basic structure for these files:
 ;;      directory (for easy access to its source code).
 #+end_src
 
-** =packages.el=
+** ~packages.el~
 
 #+begin_src emacs-lisp :tangle packages.el
 ;;; $DOOMDIR/packages.el -*- no-byte-compile: t; -*-
@@ -94,7 +94,7 @@ We start by scaffolding the basic structure for these files:
 ;; (unpin! t)
 #+end_src
 
-** =config.el=
+** ~config.el~
 
 #+begin_src emacs-lisp :tangle config.el
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
@@ -114,7 +114,7 @@ Also keep in mind of this section from [[https://github.com/doomemacs/doomemacs/
 /Note: do not use M-x customize or the customize API in general. Doom is designed to be configured programmatically from your config.el, which can conflict with Customize’s way of modifying variables./
 #+end_quote
 
-*NOTE:* Don't forget to run =doom sync=!
+*NOTE:* Don't forget to run ~doom sync~!
 
 ** Literate Config Path
 
@@ -457,7 +457,7 @@ Code copied from [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prett
 
 *** Org Roam
 
-Set the Org Roam directory to =Roam= beneath [[var:org-directory][org-directory]]:
+Set the Org Roam directory to ~Roam~ beneath [[var:org-directory][org-directory]]:
 
 #+begin_src emacs-lisp :tangle config.el
 (after! org-roam
