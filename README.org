@@ -1,4 +1,5 @@
 #+title:Hanekokoro Emacs (Doom Emacs Variant)
+#+STARTUP: fold
 
 [[file:./assets/hanekokoro-logo.svg]]
 
@@ -193,7 +194,7 @@ The module code is written literally since it's easy to understand.
        ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
+       vterm               ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -392,7 +393,6 @@ Then configure and enable it:
 #+end_src
 
 ** Org Configuration
-
 *** Org Directory
 
 #+begin_src emacs-lisp :tangle config.el
@@ -419,7 +419,9 @@ Then configure and enable it:
 
 *** Prettify
 
-Code copied from [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prettifying Emacs Org Mode]]:
+Code based on [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prettifying Emacs Org Mode]].
+
+**** Heading Levels
 
 #+begin_src emacs-lisp :tangle config.el
 (after! org
@@ -431,25 +433,42 @@ Code copied from [[https://sophiebos.io/posts/prettifying-emacs-org-mode/][Prett
                   (org-level-6 . 1.1)
                   (org-level-7 . 1.1)
                   (org-level-8 . 1.1)))
-    (set-face-attribute (car face) nil :font doom-variable-pitch-font :weight 'bold :height (cdr face)))
-  
-  ;; Make the document title a bit bigger
-  (set-face-attribute 'org-document-title nil :font doom-variable-pitch-font :weight 'bold :height 2.5)
+    (set-face-attribute (car face) nil :font doom-variable-pitch-font :weight 'bold :height (cdr face))))
+#+end_src
 
+**** Enlarge document title font height
+
+#+begin_src emacs-lisp :tangle config.el
+(after! org
+  (set-face-attribute 'org-document-title nil :font doom-variable-pitch-font :weight 'bold :height 2.5))
+#+end_src
+
+**** Use Org Indent
+
+#+begin_src emacs-lisp :tangle config.el
+(after! org
   (require 'org-indent)
   (after! org-indent
-    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch)))
-  
-  (set-face-attribute 'org-block nil            :foreground nil :inherit
-                      'fixed-pitch :height 0.85)
+    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))))
+#+end_src
+
+**** Configure Org Mode Faces
+
+#+begin_src emacs-lisp :tangle config.el
+(after! org
+  (set-face-attribute 'org-block nil            :foreground nil :inherit 'fixed-pitch :height 0.85)
   (set-face-attribute 'org-code nil             :inherit '(shadow fixed-pitch) :height 0.85)
   (set-face-attribute 'org-indent nil           :inherit '(org-hide fixed-pitch) :height 0.85)
   (set-face-attribute 'org-verbatim nil         :inherit '(shadow fixed-pitch) :height 0.85)
-  (set-face-attribute 'org-special-keyword nil  :inherit '(font-lock-comment-face
-                                                           fixed-pitch))
+  (set-face-attribute 'org-special-keyword nil  :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-meta-line nil        :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-checkbox nil         :inherit 'fixed-pitch)
-  
+  (set-face-attribute 'org-checkbox nil         :inherit 'fixed-pitch))
+#+end_src
+
+**** Disable Line Numbers, Use Variable Pitch
+
+#+begin_src emacs-lisp :tangle config.el
+(after! org
   (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
   (add-hook 'org-mode-hook 'variable-pitch-mode))
 #+end_src

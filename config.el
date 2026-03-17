@@ -63,25 +63,26 @@
                   (org-level-6 . 1.1)
                   (org-level-7 . 1.1)
                   (org-level-8 . 1.1)))
-    (set-face-attribute (car face) nil :font doom-variable-pitch-font :weight 'bold :height (cdr face)))
-  
-  ;; Make the document title a bit bigger
-  (set-face-attribute 'org-document-title nil :font doom-variable-pitch-font :weight 'bold :height 2.5)
+    (set-face-attribute (car face) nil :font doom-variable-pitch-font :weight 'bold :height (cdr face))))
 
+(after! org
+  (set-face-attribute 'org-document-title nil :font doom-variable-pitch-font :weight 'bold :height 2.5))
+
+(after! org
   (require 'org-indent)
   (after! org-indent
-    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch)))
-  
-  (set-face-attribute 'org-block nil            :foreground nil :inherit
-                      'fixed-pitch :height 0.85)
+    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))))
+
+(after! org
+  (set-face-attribute 'org-block nil            :foreground nil :inherit 'fixed-pitch :height 0.85)
   (set-face-attribute 'org-code nil             :inherit '(shadow fixed-pitch) :height 0.85)
   (set-face-attribute 'org-indent nil           :inherit '(org-hide fixed-pitch) :height 0.85)
   (set-face-attribute 'org-verbatim nil         :inherit '(shadow fixed-pitch) :height 0.85)
-  (set-face-attribute 'org-special-keyword nil  :inherit '(font-lock-comment-face
-                                                           fixed-pitch))
+  (set-face-attribute 'org-special-keyword nil  :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-meta-line nil        :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-checkbox nil         :inherit 'fixed-pitch)
-  
+  (set-face-attribute 'org-checkbox nil         :inherit 'fixed-pitch))
+
+(after! org
   (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
   (add-hook 'org-mode-hook 'variable-pitch-mode))
 
