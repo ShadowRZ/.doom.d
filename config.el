@@ -40,6 +40,7 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 
+(setq hide-mode-line-excluded-modes ())
 (global-hide-mode-line-mode)
 
 (setq org-directory "~/Documents/Org")
