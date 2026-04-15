@@ -29,6 +29,9 @@
 (set-fontset-font t 'cjk-misc "Sarasa Mono SC")
 (set-fontset-font t nil "Sarasa Mono SC" nil 'append)
 
+(add-to-list 'face-ignored-fonts "Hanekokoro Mono-E")
+(add-to-list 'face-ignored-fonts "Hanekokoro Mono-K")
+
 (setq confirm-kill-emacs nil)
 
 (use-package! catppuccin-theme

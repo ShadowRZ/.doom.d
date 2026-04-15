@@ -354,6 +354,13 @@ For Hanzi, Japanese Kana, And Korean Hangul, use Sarasa UI fonts from [[https://
 (set-fontset-font t nil "Sarasa Mono SC" nil 'append)
 #+end_src
 
+Exclude Hanekokoro Mono-E and Hanekokor Mono-K to prevent problems:
+
+#+begin_src emacs-lisp :tangle config.el
+(add-to-list 'face-ignored-fonts "Hanekokoro Mono-E")
+(add-to-list 'face-ignored-fonts "Hanekokoro Mono-K")
+#+end_src
+
 Disable quit confirmation:
 
 #+begin_src emacs-lisp :tangle config.el
