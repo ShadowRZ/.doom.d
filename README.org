@@ -367,6 +367,19 @@ Disable quit confirmation:
 (setq confirm-kill-emacs nil)
 #+end_src
 
+** Reset =shell-file-name=
+
+When the =shell-file-name= doesn't point to a POSIX compliant shell, reset it to a =sh= binary,
+and make terminal emulators use the original =shell-file-name=.
+
+#+begin_src emacs-lisp :tangle config.el
+(unless (string-match-p "/\\(ba\\|z\\|m?k\\|d?a\\)?sh$" shell-file-name)
+  (let ((original-shell-file-name shell-file-name))
+    (setq shell-file-name (executable-find "sh"))
+    (setq-default vterm-shell original-shell-file-name)
+    (setq-default explicit-shell-file-name original-shell-file-name)))
+#+end_src
+
 ** Catppuccin Theme
 
 Enable [[https://github.com/catppuccin/emacs][Catppuccin Emacs]], first install this package:

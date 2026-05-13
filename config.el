@@ -34,6 +34,12 @@
 
 (setq confirm-kill-emacs nil)
 
+(unless (string-match-p "/\\(ba\\|z\\|m?k\\|d?a\\)?sh$" shell-file-name)
+  (let ((original-shell-file-name shell-file-name))
+    (setq shell-file-name (executable-find "sh"))
+    (setq-default vterm-shell original-shell-file-name)
+    (setq-default explicit-shell-file-name original-shell-file-name)))
+
 (use-package! catppuccin-theme
   :init
   (setq catppuccin-flavor 'mocha)
