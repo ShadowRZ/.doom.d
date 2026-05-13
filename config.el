@@ -49,8 +49,13 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 
-(setq hide-mode-line-excluded-modes ())
-(global-hide-mode-line-mode)
+(define-globalized-minor-mode
+  global-mode-line-invisible-mode
+  mode-line-invisible-mode
+  mode-line-invisible-mode
+  (redraw-display))
+
+(global-mode-line-invisible-mode)
 
 (setq org-directory "~/Documents/Org")
 

@@ -407,11 +407,16 @@ Then configure and enable it:
 
 ** Hide Mode Line
 
-*NOTE:* Doesn't seem to work consistently?
+Use a global minor mode wrapper around [[elisp:define-globalized-minor-mode][=define-globalized-minor-mode=]]:
 
 #+begin_src emacs-lisp :tangle config.el
-(setq hide-mode-line-excluded-modes ())
-(global-hide-mode-line-mode)
+(define-globalized-minor-mode
+  global-mode-line-invisible-mode
+  mode-line-invisible-mode
+  mode-line-invisible-mode
+  (redraw-display))
+
+(global-mode-line-invisible-mode)
 #+end_src
 
 ** Org Configuration
