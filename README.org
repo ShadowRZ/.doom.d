@@ -5,6 +5,8 @@
 
 This is [[https://github.com/ShadowRZ][@ShadowRZ]]'s [[https://github.com/doomemacs/doomemacs][Doom Emacs]] configuration, along with a summary of what each part of source code means.
 
+This configuration corresponds to [[https://github.com/doomemacs/doomemacs/commit/179e5fb320279580bf596b2a69cc3b091bbc607f][Commit =179e5fb320279580bf596b2a69cc3b091bbc607f=]].
+
 * Basic Structure
 
 Doom Emacs uses three configuration files:
