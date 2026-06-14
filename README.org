@@ -215,7 +215,7 @@ The module code is written literally since it's easy to understand.
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        ;;llm               ; when I said you needed friends, I didn't mean...
-       lsp                 ; M-x vscode
+       (lsp +eglot)        ; M-x vscode
        magit               ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -384,21 +384,16 @@ and make terminal emulators use the original =shell-file-name=.
 
 ** Catppuccin Theme
 
-Enable [[https://github.com/catppuccin/emacs][Catppuccin Emacs]], first install this package:
+Enable [[https://github.com/catppuccin/emacs][Batppuccin]], first install this package:
 
 #+begin_src emacs-lisp :tangle packages.el
-(package! catppuccin-theme)
+(package! batppuccin)
 #+end_src
 
-Then configure and enable it:
+Then enable it:
 
 #+begin_src emacs-lisp :tangle config.el
-(use-package! catppuccin-theme
-  :init
-  (setq catppuccin-flavor 'mocha)
-  (add-hook 'server-after-make-frame-hook #'catppuccin-reload))
-
-(setq doom-theme 'catppuccin)
+(setq doom-theme 'batppuccin-mocha)
 #+end_src
 
 ** Fullscreen By Default

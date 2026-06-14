@@ -40,12 +40,7 @@
     (setq-default vterm-shell original-shell-file-name)
     (setq-default explicit-shell-file-name original-shell-file-name)))
 
-(use-package! catppuccin-theme
-  :init
-  (setq catppuccin-flavor 'mocha)
-  (add-hook 'server-after-make-frame-hook #'catppuccin-reload))
-
-(setq doom-theme 'catppuccin)
+(setq doom-theme 'batppuccin-mocha)
 
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 
