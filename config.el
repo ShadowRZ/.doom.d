@@ -98,4 +98,4 @@
 
 (setq org-roam-directory (file-name-concat org-directory "Roam"))
 
-(setq fancy-splash-image (file-name-concat doom-user-dir "assets/hanekokoro-logo.svg"))
+(setq fancy-splash-image (file-name-concat doom-user-dir "assets/doom-logo.svg"))

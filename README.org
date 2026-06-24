@@ -508,5 +508,5 @@ Set the Org Roam directory to ~Roam~ beneath [[var:org-directory][org-directory]
 ** Fancy Splash Image
 
 #+begin_src emacs-lisp :tangle config.el
-(setq fancy-splash-image (file-name-concat doom-user-dir "assets/hanekokoro-logo.svg"))
+(setq fancy-splash-image (file-name-concat doom-user-dir "assets/doom-logo.svg"))
 #+end_src
